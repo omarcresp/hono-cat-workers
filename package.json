@@ -1,0 +1,19 @@
+{
+  "name": "socat",
+  "private": true,
+  "version": "0.0.1",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "hono": "^4.2.9"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240423.0",
+    "esbuild": "^0.20.2",
+    "wrangler": "^3.53.0"
+  }
+}
