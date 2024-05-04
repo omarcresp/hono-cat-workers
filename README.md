@@ -62,7 +62,7 @@ Yusuke Wada <https://github.com/yusukebe>
 - [ ] EH: htmx shows errors
 - [ ] EH: StatusCodes
 - [ ] EH: DTO middleware json parsing error
-- [ ] Eslint + prettier
+- [X] Eslint + prettier
 - [ ] Modules segment
 - [ ] Document
 
