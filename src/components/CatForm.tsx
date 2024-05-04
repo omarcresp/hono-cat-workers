@@ -1,13 +1,13 @@
-import { Cat } from "@prisma/client";
+import { Cat } from '@prisma/client';
 
 export function CatForm({ cat }: { cat?: Cat }) {
   const isEdit = !!cat;
 
-  const formMethod = isEdit ? "put" : "post";
-  const idPath = isEdit ? "/" + cat.id : "";
+  const formMethod = isEdit ? 'put' : 'post';
+  const idPath = isEdit ? '/' + cat.id : '';
 
   const formHx = {
-    ["hx-" + formMethod]: "/api/v1/cat" + idPath,
+    ['hx-' + formMethod]: '/api/v1/cat' + idPath,
   };
 
   return (
@@ -17,7 +17,7 @@ export function CatForm({ cat }: { cat?: Cat }) {
         type="text"
         placeholder="name"
         name="name"
-        value={cat?.name ?? ""}
+        value={cat?.name ?? ''}
       />
 
       <input
@@ -25,7 +25,7 @@ export function CatForm({ cat }: { cat?: Cat }) {
         type="text"
         placeholder="bread"
         name="bread"
-        value={cat?.bread ?? ""}
+        value={cat?.bread ?? ''}
       />
 
       {isEdit && (
@@ -39,7 +39,7 @@ export function CatForm({ cat }: { cat?: Cat }) {
         </button>
       )}
 
-      <button>{isEdit ? "Guardar" : "Crear"}</button>
+      <button>{isEdit ? 'Guardar' : 'Crear'}</button>
     </form>
   );
 }

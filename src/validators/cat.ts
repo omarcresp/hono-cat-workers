@@ -1,3 +1,3 @@
-import { CatModel } from "../../prisma/zod";
+import { CatModel } from '../../prisma/zod';
 
-export const CatCreateModel = CatModel.pick({name: true, bread: true})
+export const CatCreateModel = CatModel.pick({ name: true, bread: true });

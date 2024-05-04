@@ -1,9 +1,9 @@
-import { Cat } from "@prisma/client";
-import { CatForm } from "./components/CatForm";
-import { Cats } from "./components/HomeCat";
-import { CatRepository } from "./repository";
-import { CatCard } from "./components/CatCard";
-import { swapOOB } from "./utils/oob";
+import { Cat } from '@prisma/client';
+import { CatForm } from './components/CatForm';
+import { Cats } from './components/HomeCat';
+import { CatRepository } from './repository';
+import { CatCard } from './components/CatCard';
+import { swapOOB } from './utils/oob';
 
 export class CatServices {
   private catRepo: CatRepository;
@@ -26,7 +26,7 @@ export class CatServices {
     const newCat = await this.catRepo.create(cat);
 
     const catCard = CatCard(newCat);
-    const cardOob = swapOOB(catCard, "beforeend:#list");
+    const cardOob = swapOOB(catCard, 'beforeend:#list');
 
     const form = CatForm({});
 

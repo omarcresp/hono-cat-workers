@@ -1,4 +1,4 @@
-import { CatServices } from "../service";
+import { CatServices } from '../service';
 
 export interface Worker {
   Bindings: {

@@ -1,6 +1,6 @@
-import { Cat } from "@prisma/client";
+import { Cat } from '@prisma/client';
 
-import { CatCard } from "./CatCard"
+import { CatCard } from './CatCard';
 
 export function Cats(cats: Cat[]) {
   return (

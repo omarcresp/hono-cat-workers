@@ -1,10 +1,10 @@
-import { Cat } from "@prisma/client";
+import { Cat } from '@prisma/client';
 
 export function CatCard(cat: Cat) {
   // const catId = `cat-${cat.id.toString()}`;
-  const catId = "cat-" + cat.id.toString();
-  const deletePath = "/api/v1/cat/" + cat.id;
-  const editPath = "/api/v1/cat/view/edit-cat/" + cat.id;
+  const catId = 'cat-' + cat.id.toString();
+  const deletePath = '/api/v1/cat/' + cat.id;
+  const editPath = '/api/v1/cat/view/edit-cat/' + cat.id;
 
   return (
     <article
@@ -27,7 +27,9 @@ export function CatCard(cat: Cat) {
         <span className="text-zinc-800">{cat.bread}</span>
       </section>
       <section className="flex justify-center">
-        <button hx-get={editPath} hx-target="form" hx-swap="outerHTML">Editar</button>
+        <button hx-get={editPath} hx-target="form" hx-swap="outerHTML">
+          Editar
+        </button>
       </section>
     </article>
   );

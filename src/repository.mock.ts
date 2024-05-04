@@ -1,6 +1,6 @@
-import { Cat } from "@prisma/client";
+import { Cat } from '@prisma/client';
 
-import { CatRepository, PrismaRepo } from "./repository";
+import { CatRepository, PrismaRepo } from './repository';
 
 export class CatMockRepository implements CatRepository {
   public prisma!: PrismaRepo;
@@ -27,8 +27,8 @@ export class CatMockRepository implements CatRepository {
 
   public getById(catId: number): Promise<Cat> {
     return Promise.resolve({
-      name: "martin",
-      bread: "arabic",
+      name: 'martin',
+      bread: 'arabic',
       id: catId,
       created_at: 0,
     });
@@ -37,8 +37,8 @@ export class CatMockRepository implements CatRepository {
   public getAllCats(): Promise<Cat[]> {
     return Promise.resolve([
       {
-        name: "martin",
-        bread: "arabic",
+        name: 'martin',
+        bread: 'arabic',
         id: 1,
         created_at: 0,
       },

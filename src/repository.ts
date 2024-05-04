@@ -1,5 +1,5 @@
-import { PrismaD1 } from "@prisma/adapter-d1";
-import { Cat, PrismaClient } from "@prisma/client";
+import { PrismaD1 } from '@prisma/adapter-d1';
+import { Cat, PrismaClient } from '@prisma/client';
 
 export type PrismaRepo = PrismaClient<{ adapter: PrismaD1 }>;
 
