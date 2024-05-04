@@ -1,6 +1,7 @@
 name = "socat"
 main = "src/index.ts"
-compatibility_date = "2024-04-23"
+compatibility_date = "2024-04-19"
+compatibility_flags = ["nodejs_compat"]
 
 routes = [
 	{ pattern = "workers.kaizen-learning.xyz/api/v1/cat", zone_id = "c6d3d22de33118ed95fc1605726a714d" }

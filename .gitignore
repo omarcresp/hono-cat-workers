@@ -5,5 +5,7 @@ package-lock.json
 yarn.lock
 .cargo-ok
 
+coverage
+
 # Output of 'npm pack'
 *.tgz
