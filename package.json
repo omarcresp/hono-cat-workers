@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "npm run apply-mig --remote && npm run push",
+    "deploy": "npm run apply-mig -- --remote && npm run push",
     "push": "wrangler deploy",
     "apply-mig": "wrangler d1 migrations apply socat-db",
     "init-mig": "wrangler d1 migrations create socat-db",
@@ -16,12 +16,17 @@
   "dependencies": {
     "@prisma/adapter-d1": "^5.13.0",
     "@prisma/client": "^5.13.0",
-    "hono": "^4.2.9"
+    "hono": "^4.2.9",
+    "status-code-enum": "^1.0.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240423.0",
+    "@tailwindcss/cli": "^4.0.0-alpha.14",
     "esbuild": "^0.20.2",
     "prisma": "^5.13.0",
-    "wrangler": "^3.53.0"
+    "tailwindcss": "^4.0.0-alpha.14",
+    "typescript": "^5.4.5",
+    "wrangler": "^3.53.0",
+    "zod-prisma": "^0.5.4"
   }
 }

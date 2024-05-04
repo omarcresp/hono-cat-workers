@@ -13,6 +13,10 @@ model Cat {
   created_at Int
 }
 
+generator zod {
+  provider = "zod-prisma"
+}
+
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")

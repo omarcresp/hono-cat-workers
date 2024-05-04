@@ -6,4 +6,7 @@ export interface Worker {
     MESSAGE: string;
     service: CatServices;
   };
+  Variables: {
+    json: unknown;
+  };
 }
