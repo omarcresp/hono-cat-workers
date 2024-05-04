@@ -1,8 +1,8 @@
 import { html } from 'hono/html';
 import { jsxRenderer } from 'hono/jsx-renderer';
 
-export const renderer = jsxRenderer(({ children }) => {
-  return html`
+export const renderer = jsxRenderer(
+  ({ children }) => html`
     <!doctype html>
     <html>
       <head>
@@ -24,5 +24,5 @@ export const renderer = jsxRenderer(({ children }) => {
         ></script>
       </body>
     </html>
-  `;
-});
+  `,
+);

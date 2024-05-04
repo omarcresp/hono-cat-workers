@@ -1,3 +1,5 @@
+// TODO: Define better log to console way
+/* eslint-disable no-console */
 import { Hono } from 'hono';
 import { Cat } from '@prisma/client';
 import { StatusCode } from 'status-code-enum';
@@ -13,7 +15,7 @@ app.get('/cat', async (c) => {
   try {
     const cats = await c.env.service.getAll();
 
-    return c.render(cats);
+    return await c.render(cats);
   } catch (err) {
     console.error(err);
     return c.text('error');
@@ -39,7 +41,7 @@ app.post('/cat', dtoValidator(CatCreateModel), async (c) => {
     const cat = c.get('json') as Cat;
     const template = await c.env.service.create(cat);
 
-    return c.html(template);
+    return await c.html(template);
   } catch (err) {
     console.error(err);
     return c.text('error');
@@ -62,7 +64,7 @@ app.delete('/cat/:catId', async (c) => {
 
 app.get('/cat/view/reset-form', async (c) => {
   try {
-    return c.html(CatForm({}));
+    return await c.html(CatForm({}));
   } catch (err) {
     console.error(err);
     return c.text('error');
@@ -74,7 +76,7 @@ app.get('/cat/view/edit-cat/:catId', async (c) => {
     const { catId } = c.req.param();
     const catForm = c.env.service.renderForm(catId);
 
-    return c.html(catForm);
+    return await c.html(catForm);
   } catch (err) {
     console.error(err);
     return c.text('error');

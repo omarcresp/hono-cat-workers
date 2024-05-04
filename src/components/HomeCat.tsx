@@ -3,7 +3,8 @@ import { Cat } from '@prisma/client';
 import { CatCard } from './CatCard';
 import { CatForm } from './CatForm';
 
-export function Cats(cats: Cat[]) {
+// TODO: be sure about this prop spread
+export function Cats({ ...cats }: Cat[]) {
   return (
     <main>
       <h1 className="text-center text-3xl">Amazing Cat List</h1>

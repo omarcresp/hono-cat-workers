@@ -12,11 +12,13 @@ export const injectDB = createMiddleware<Worker>(async (c, next) => {
   const adapter = new PrismaD1(c.env.DB);
   const prisma = new PrismaClient({ adapter });
   const catRepositoy = new CatRepository(prisma);
+  // eslint-disable-next-line no-param-reassign
   c.env.service = new CatServices(catRepositoy);
 
   await next();
 });
 
+// TODO: move dtoValidator to his own file
 export const dtoValidator = (model: z.ZodObject<any, any>) =>
   createMiddleware<Worker>(async (c, next) => {
     try {
@@ -24,11 +26,9 @@ export const dtoValidator = (model: z.ZodObject<any, any>) =>
       const json = model.parse(rawJson);
       c.set('json', json);
     } catch (err) {
-      console.log(err);
-
       c.status(StatusCode.ClientErrorUnprocessableEntity);
       return c.text('error');
     }
 
-    await next();
+    return next();
   });

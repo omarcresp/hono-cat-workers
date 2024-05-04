@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "node16",
     "esModuleInterop": true,
     "strict": true,
     "lib": [
@@ -10,7 +10,8 @@
     ],
     "types": [
       "@cloudflare/workers-types",
-      "@cloudflare/vitest-pool-workers"
+      "@cloudflare/vitest-pool-workers",
+      "typed-htmx"
     ],
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx"
