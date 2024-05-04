@@ -1,19 +1,27 @@
 {
   "name": "socat",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "src/index.ts",
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "deploy": "npm run apply-mig --remote && npm run push",
+    "push": "wrangler deploy",
+    "apply-mig": "wrangler d1 migrations apply socat-db",
+    "init-mig": "wrangler d1 migrations create socat-db",
+    "create-mig": "prisma migrate diff --from-empty --to-schema-datamodel ./prisma/schema.prisma --script",
+    "prisma": "prisma generate"
   },
   "license": "MIT",
   "dependencies": {
+    "@prisma/adapter-d1": "^5.13.0",
+    "@prisma/client": "^5.13.0",
     "hono": "^4.2.9"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240423.0",
     "esbuild": "^0.20.2",
+    "prisma": "^5.13.0",
     "wrangler": "^3.53.0"
   }
 }

@@ -1,12 +1,15 @@
-import { Hono } from 'hono'
-import { poweredBy } from 'hono/powered-by'
+import { Hono } from "hono";
 
-const app = new Hono()
+import { renderer } from "./utils/renderer";
+import { Worker } from "./utils/types";
+import { injectDB } from "./utils/injectDB";
+import catController from "./controller"
 
-app.use('*', poweredBy())
+const app = new Hono<Worker>();
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
+app.get("*", renderer);
+app.use("*", injectDB);
 
-export default app
+app.route("/api/v1", catController)
+
+export default app;

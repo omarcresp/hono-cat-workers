@@ -2,10 +2,14 @@ name = "socat"
 main = "src/index.ts"
 compatibility_date = "2024-04-23"
 
+routes = [
+	{ pattern = "workers.kaizen-learning.xyz/api/v1/cat", zone_id = "c6d3d22de33118ed95fc1605726a714d" }
+]
+
 [vars]
 MESSAGE = "This is an environment variable"
 
 [[d1_databases]]
-binding = "DB" # i.e. available in your Worker on env.DB
+binding = "DB"
 database_name = "socat-db"
 database_id = "361e0120-463a-43b7-8557-e970bb5a3c8b"
