@@ -57,7 +57,7 @@ Yusuke Wada <https://github.com/yusukebe>
 ## TODO
 
 #### For template
-- [ ] Add vitest
+- [X] Add vitest
 - [ ] Improve error handling
 - [ ] EH: htmx shows errors
 - [ ] EH: StatusCodes
