@@ -17,18 +17,18 @@ export const injectDB = createMiddleware<Worker>(async (c, next) => {
   await next();
 });
 
-export const dtoValidator = <T extends z.ZodObject<any, any>>(model: T) =>
+export const dtoValidator = (model: z.ZodObject<any, any>) =>
   createMiddleware<Worker>(async (c, next) => {
     try {
       const rawJson = await c.req.json();
       const json = model.parse(rawJson);
-      c.set("json", json)
-
-      await next();
+      c.set("json", json);
     } catch (err) {
-      console.log(err)
+      console.log(err);
 
-      c.status(StatusCode.ClientErrorUnprocessableEntity)
-      return c.text("error")
+      c.status(StatusCode.ClientErrorUnprocessableEntity);
+      return c.text("error");
     }
+
+    await next();
   });

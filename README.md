@@ -51,7 +51,27 @@ See: <https://honojs.dev>
 
 ## Author
 
+Omar Crespo <https://github.com/omarcresp>
 Yusuke Wada <https://github.com/yusukebe>
+
+## TODO
+
+#### For template
+- [ ] Add vitest
+- [ ] Improve error handling
+- [ ] EH: htmx shows errors
+- [ ] EH: StatusCodes
+- [ ] EH: DTO middleware json parsing error
+- [ ] Eslint + prettier
+- [ ] Modules segment
+- [ ] Document
+
+#### For big project ussage
+- [ ] JWT
+- [ ] R2
+- [ ] MQ System to connect services
+- [ ] Auth middleware that injects user
+- [ ] Development server flow
 
 ## License
 
